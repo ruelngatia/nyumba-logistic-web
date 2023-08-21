@@ -10,7 +10,15 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ConfigProvider>
+      <ConfigProvider
+        theme={{
+          token: {
+            fontFamily: 'Montserrat',
+            colorPrimary: "#0082C6",
+            colorBgBase: '#ffff',            
+          }
+        }}
+      >
         <App />
       </ConfigProvider>
     </BrowserRouter>
