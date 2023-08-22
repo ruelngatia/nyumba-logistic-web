@@ -51,7 +51,7 @@ export default function NoticeTable() {
 
   return (
     <div className=' lg:w-2/4'>
-        <Table size='large' pagination={{hideOnSinglePage: true}} dataSource={data} columns={columns}/>
+        <Table size='middle' pagination={{hideOnSinglePage: true}} dataSource={data} columns={columns}/>
     </div>
   )
 }
