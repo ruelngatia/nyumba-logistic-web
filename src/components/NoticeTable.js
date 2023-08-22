@@ -38,12 +38,20 @@ export default function NoticeTable() {
             name: 'Omari Dan',
             actNo: '1233',
             balance: 'ksh 1000'
-        }
+        },
+        {
+          key: '2',
+          no: 3,
+          unit: 'A5',
+          name: 'Omari Dan',
+          actNo: '1233',
+          balance: 'ksh 1000'
+      }
       ]
 
   return (
-    <div className='w-full lg:w-2/4'>
-        <Table pagination={{hideOnSinglePage: true}} dataSource={data} columns={columns}/>
+    <div className=' lg:w-2/4'>
+        <Table size='large' pagination={{hideOnSinglePage: true}} dataSource={data} columns={columns}/>
     </div>
   )
 }

@@ -23,7 +23,7 @@ export default function Dashboard() {
       <section className='flex flex-col lg:flex-row gap-4 mt-10'>
         <NoticeTable />
         <ReminderTable />
-        <div className='lg:space-y-2 space-x-3 flex flex-row flex-wrap gap-2 lg:flex-col pl-2 '>
+        <div className='grid grid-cols-2 lg:grid-cols-1 gap-2'>
           <Button>Potential Tenants</Button>
           <Button>Add Tenants</Button>
           <Button>Add Payment</Button>
