@@ -4,7 +4,7 @@ import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 
 export default function DashCard({src, text}) {
   return (
-    <div className='border rounded-md py-2'>
+    <div className='border border-card-border rounded-md py-2'>
         <div>
             <div className='flex flex-row justify-between p-2'>
                 <div className='w-32 mr-2 h-32'>
@@ -17,7 +17,7 @@ export default function DashCard({src, text}) {
                 </Space>
             </div>
         </div>
-        <div className='text-left border-t pr-4'>
+        <div className='text-left border-t border-card-border  pr-4'>
             <Space direction='horizontal' className='float-right'>
                 <span>View details</span> 
                 <span>

@@ -84,7 +84,7 @@ function App() {
   ];
 
   return (
-    <div className="App h-screen">
+    <div className="App h-full ">
       <Layout className="h-full">
         <Header
           className="h-16 flex flex-row justify-between bg-primary-color text-white relative"
@@ -124,7 +124,7 @@ function App() {
               width={"20rem"}
               style={{ backgroundColor: "#E6FAFF" }}
               hidden={!screen}
-              className=" border-b-grey border-r-2 h-full "
+              className=" border-b-grey border-r-2 h-screen "
             >
               <Menu
                 className="text-left text-xl bg-sider-blue space-y-3"
@@ -133,7 +133,7 @@ function App() {
                 items={items1}
               />
             </Sider>
-            <Content>
+            <Content className="">
               <Routes>
                 <Route path="/" element={<Dashboard/>} />
               </Routes>

@@ -8,7 +8,8 @@ module.exports = {
       'white': '#ffff ',
       'b-grey': '#9ca3af',
       'sider-blue': '#E6FAFF',
-      'active': '#001529'
+      'active': '#001529',
+      'card-border': '#9d9898'
     }
   },
   plugins: [],

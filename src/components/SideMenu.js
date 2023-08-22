@@ -49,7 +49,7 @@ export default function SideMenu() {
     },
   ];
   return (
-    <div className="absolute h-screen md:hidden w-2/4">
+    <div className="absolute h-screen md:hidden w-2/4 z-40">
       <Menu
         className="text-left text-xl bg-sider-blue space-y-3 pb-2 h-full "
         mode="inline"
