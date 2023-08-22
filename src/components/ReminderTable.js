@@ -32,7 +32,7 @@ export default function ReminderTable() {
     ]
 
   return (
-    <div className='shadow-xl w-full lg:w-2/4'>
+    <div className='shadow-1xl w-full lg:w-2/4'>
         <Table pagination={{hideOnSinglePage:true}} columns={columns} dataSource={data}/>
     </div>
   )

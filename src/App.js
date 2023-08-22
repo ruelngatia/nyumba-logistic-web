@@ -125,13 +125,13 @@ function App() {
           <Layout className="h-full ">
             {isSideMenuHidden?<SideMenu />:""}
             <Sider
-              width={"18rem"}
+              width={"14rem"}
               style={{ backgroundColor: "#E6FAFF" }}
               hidden={!screen}
-              className=" border-b-grey border-r-2 h-screen "
+              className=" h-screen "
             >
               <Menu
-                className="text-left text-xl bg-sider-blue space-y-3"
+                className="text-left  bg-sider-blue space-y-0.5"
                 mode="inline"
                 defaultSelectedKeys={["3"]}
                 items={items1}

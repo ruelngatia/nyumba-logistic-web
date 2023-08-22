@@ -50,7 +50,7 @@ export default function NoticeTable() {
       ]
 
   return (
-    <div className=' shadow-xl lg:w-2/4'>
+    <div className=' shadow-1xl lg:w-2/4'>
         <Table size='middle' pagination={{hideOnSinglePage: true}} dataSource={data} columns={columns}/>
     </div>
   )

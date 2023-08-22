@@ -15,7 +15,7 @@ root.render(
           token: {
             fontFamily: 'Montserrat',
             // colorPrimary: "#0082C6",
-            colorBgLayout: '#ffff'
+            colorBgLayout: '#ffff',
           }
         }}
       >

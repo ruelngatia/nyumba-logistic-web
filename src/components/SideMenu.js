@@ -49,9 +49,9 @@ export default function SideMenu() {
     },
   ];
   return (
-    <div className="absolute h-screen md:hidden w-3/4 z-40">
+    <div className="absolute h-screen md:hidden  z-40">
       <Menu
-        className="text-left text-xl bg-sider-blue space-y-3 pb-2 h-full "
+        className="text-left bg-sider-blue space-y-0.5 pb-2 h-full "
         mode="inline"
         defaultSelectedKeys={["3"]}
         items={items1}
