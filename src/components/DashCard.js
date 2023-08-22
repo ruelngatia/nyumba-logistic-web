@@ -4,7 +4,7 @@ import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';
 
 export default function DashCard({src, text}) {
   return (
-    <div className='border border-card-border rounded-md py-2'>
+    <div className='shadow hover:shadow-2xl rounded-md py-2'>
         <div>
             <div className='flex flex-row justify-between p-2'>
                 <div className='w-32 mr-2 h-32'>

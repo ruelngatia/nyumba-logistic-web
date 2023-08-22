@@ -14,8 +14,7 @@ root.render(
         theme={{
           token: {
             fontFamily: 'Montserrat',
-            colorPrimary: "#0082C6",
-            colorBgBase: '#ffff',
+            // colorPrimary: "#0082C6",
             colorBgLayout: '#ffff'
           }
         }}

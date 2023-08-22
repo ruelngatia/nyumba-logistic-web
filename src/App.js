@@ -63,23 +63,27 @@ function App() {
 
   const items = [
     {
-      label: "1st menu item",
+      label: "Baraka hostel",
       key: "1",
     },
     {
-      label: "2nd menu item",
+      label: "Burj khalifa",
       key: "2",
     },
     {
-      label: "3rd menu item",
+      label: "Zod towers",
       key: "3",
-      danger: true,
+    }
+  ];
+
+  const notifications = [
+    {
+      label: "New payment recieved",
+      key: "1",
     },
     {
-      label: "4rd menu item",
-      key: "4",
-      danger: true,
-      disabled: true,
+      label: "John doe vacated",
+      key: "2",
     },
   ];
 
@@ -110,8 +114,8 @@ function App() {
                 </Space>
               </a>
             </Dropdown>
-            <Dropdown menu={{ items }}>
-              <Badge count={0} className="">
+            <Dropdown menu={{items: notifications}}>
+              <Badge count={2} className="">
                 <Avatar>C</Avatar>
               </Badge>
             </Dropdown>
@@ -121,7 +125,7 @@ function App() {
           <Layout className="h-full ">
             {isSideMenuHidden?<SideMenu />:""}
             <Sider
-              width={"20rem"}
+              width={"18rem"}
               style={{ backgroundColor: "#E6FAFF" }}
               hidden={!screen}
               className=" border-b-grey border-r-2 h-screen "

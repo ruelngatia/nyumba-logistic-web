@@ -24,7 +24,7 @@ export default function Dashboard() {
         <NoticeTable />
         <ReminderTable />
         <div className='grid grid-cols-2 lg:grid-cols-1 gap-2'>
-          <Button>Potential Tenants</Button>
+          <Button>Potential </Button>
           <Button>Add Tenants</Button>
           <Button>Add Payment</Button>
           <Button>Add Billing</Button>
