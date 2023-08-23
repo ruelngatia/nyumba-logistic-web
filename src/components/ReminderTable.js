@@ -1,7 +1,7 @@
-import { Table } from 'antd'
+import { Button, Table, Typography } from 'antd'
 import React from 'react'
 
-export default function ReminderTable() {
+export default function ReminderTable({isAddReminder,setIsAddReminder}) {
 
     const columns = [
         {
@@ -33,7 +33,9 @@ export default function ReminderTable() {
 
   return (
     <div className='shadow-1xl w-full lg:w-2/4'>
-        <Table pagination={{hideOnSinglePage:true}} columns={columns} dataSource={data}/>
+      <Typography>Reminder</Typography>
+      <Button className='float-right mr-2 bg-primary-color text-white' onClick={()=>setIsAddReminder(!isAddReminder)}>Add</Button>
+      <Table pagination={{hideOnSinglePage:true}} columns={columns} dataSource={data}/>
     </div>
   )
 }

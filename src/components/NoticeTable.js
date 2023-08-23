@@ -1,4 +1,4 @@
-import { Table } from 'antd'
+import { Table, Typography } from 'antd'
 import React from 'react'
 
 export default function NoticeTable() {
@@ -51,6 +51,7 @@ export default function NoticeTable() {
 
   return (
     <div className=' shadow-1xl lg:w-2/4'>
+        <Typography>Notice Board</Typography>
         <Table size='middle' pagination={{hideOnSinglePage: true}} dataSource={data} columns={columns}/>
     </div>
   )

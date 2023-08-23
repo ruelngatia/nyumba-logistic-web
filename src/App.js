@@ -1,6 +1,6 @@
 import { Avatar, Badge, Dropdown, Layout, Menu, Space } from "antd";
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import { Content, Header } from "antd/es/layout/layout";
 import Sider from "antd/es/layout/Sider";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -9,54 +9,53 @@ import { useState } from "react";
 import Dashboard from "./pages/Dashboard";
 import SideMenu from "./components/SideMenu";
 import { useMediaQuery } from "@mui/material";
+import Property from "./pages/Property";
+import Tenants from "./pages/Tenants";
 
 function App() {
   const [isSideMenuHidden, setIsSideMenuHidden] = useState(false);
   const screen = useMediaQuery('(min-width:768px)');
+  const navigate = useNavigate()
 
   const items1 = [
     {
-      key: "1",
+      key: "",
       label: "Dashboard",
     },
     {
-      key: "2",
+      key: "property",
       label: "Property",
     },
     {
-      key: "3",
+      key: "tenants",
       label: "Tenants",
     },
     {
-      key: "4",
+      key: "fainances",
       label: "Fainances",
     },
     {
-      key: "5",
+      key: "maintainance",
       label: "Maintainance",
     },
     {
-      key: "6",
+      key: "invoices",
       label: "Invoinces",
     },
     {
-      key: "7",
+      key: "reports",
       label: "Reports",
     },
     {
-      key: "8",
-      label: "Invoinces",
-    },
-    {
-      key: "9",
+      key: "communications",
       label: "Communications",
     },
     {
-      key: "10",
+      key: "analysis",
       label: "Analysis",
     },
     {
-      key: "11",
+      key: "settings",
       label: "Settings",
     },
   ];
@@ -135,11 +134,17 @@ function App() {
                 mode="inline"
                 defaultSelectedKeys={["3"]}
                 items={items1}
+                onClick={(info)=>{
+                  navigate('/'+info.key)
+                  console.log(info);
+                }}
               />
             </Sider>
             <Content className="">
               <Routes>
                 <Route path="/" element={<Dashboard/>} />
+                <Route path="/property" element={<Property/>} />
+                <Route path="/tenants" element={<Tenants/>} />
               </Routes>
             </Content>
           </Layout>
