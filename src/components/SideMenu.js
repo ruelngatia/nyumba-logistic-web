@@ -1,50 +1,50 @@
 import { Menu } from "antd";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function SideMenu() {
+
+  const naviagate = useNavigate();
+
   const items1 = [
     {
-      key: "1",
+      key: "",
       label: "Dashboard",
     },
     {
-      key: "2",
+      key: "property",
       label: "Property",
     },
     {
-      key: "3",
+      key: "tenants",
       label: "Tenants",
     },
     {
-      key: "4",
+      key: "fainances",
       label: "Fainances",
     },
     {
-      key: "5",
+      key: "maintainance",
       label: "Maintainance",
     },
     {
-      key: "6",
+      key: "invoices",
       label: "Invoinces",
     },
     {
-      key: "7",
+      key: "reports",
       label: "Reports",
     },
     {
-      key: "8",
-      label: "Invoinces",
-    },
-    {
-      key: "9",
+      key: "communications",
       label: "Communications",
     },
     {
-      key: "10",
+      key: "analysis",
       label: "Analysis",
     },
     {
-      key: "11",
+      key: "settings",
       label: "Settings",
     },
   ];
@@ -55,6 +55,7 @@ export default function SideMenu() {
         mode="inline"
         defaultSelectedKeys={["3"]}
         items={items1}
+        onClick={(info) => naviagate('/'+info.key)}
       />
     </div>
   );
