@@ -11,6 +11,7 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <ConfigProvider
+        key={'default'}
         theme={{
           token: {
             fontFamily: 'Montserrat',

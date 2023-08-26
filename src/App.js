@@ -11,6 +11,8 @@ import SideMenu from "./components/SideMenu";
 import { useMediaQuery } from "@mui/material";
 import Property from "./pages/Property";
 import Tenants from "./pages/Tenants";
+import Finances from "./pages/Finances";
+import Invoice from "./pages/Invoice";
 
 function App() {
   const [isSideMenuHidden, setIsSideMenuHidden] = useState(false);
@@ -31,7 +33,7 @@ function App() {
       label: "Tenants",
     },
     {
-      key: "fainances",
+      key: "finances",
       label: "Fainances",
     },
     {
@@ -145,6 +147,8 @@ function App() {
                 <Route path="/" element={<Dashboard/>} />
                 <Route path="/property" element={<Property/>} />
                 <Route path="/tenants" element={<Tenants/>} />
+                <Route path="/finances" element={<Finances/>} />
+                <Route path="/invoices" element={<Invoice/>} />
               </Routes>
             </Content>
           </Layout>
