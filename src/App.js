@@ -13,6 +13,7 @@ import Property from "./pages/Property";
 import Tenants from "./pages/Tenants";
 import Finances from "./pages/Finances";
 import Invoice from "./pages/Invoice";
+import Communication from "./pages/Communication";
 
 function App() {
   const [isSideMenuHidden, setIsSideMenuHidden] = useState(false);
@@ -124,14 +125,14 @@ function App() {
         </Header>
         <Content className="">
           <Layout className="h-full ">
-            {isSideMenuHidden?<SideMenu />:""}
+            {isSideMenuHidden?<SideMenu setIsSideMenuHidden={setIsSideMenuHidden}/>:""}
             <Sider
               width={"14rem"}
               style={{ backgroundColor: "#E6FAFF" }}
               hidden={!screen}
               className=" h-screen "
             >
-              <Menu
+              {/* <Menu
                 className="text-left  bg-sider-blue space-y-0.5"
                 mode="inline"
                 defaultSelectedKeys={["3"]}
@@ -140,7 +141,8 @@ function App() {
                   navigate('/'+info.key)
                   console.log(info);
                 }}
-              />
+              /> */}
+              <SideMenu setIsSideMenuHidden={setIsSideMenuHidden}/>
             </Sider>
             <Content className="">
               <Routes>
@@ -149,6 +151,7 @@ function App() {
                 <Route path="/tenants" element={<Tenants/>} />
                 <Route path="/finances" element={<Finances/>} />
                 <Route path="/invoices" element={<Invoice/>} />
+                <Route path="/communications" element={<Communication/>} />
               </Routes>
             </Content>
           </Layout>

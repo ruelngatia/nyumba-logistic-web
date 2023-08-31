@@ -2,7 +2,7 @@ import { Menu } from "antd";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-export default function SideMenu() {
+export default function SideMenu({setIsSideMenuHidden}) {
 
   const naviagate = useNavigate();
 
@@ -49,13 +49,16 @@ export default function SideMenu() {
     },
   ];
   return (
-    <div className="absolute h-screen md:hidden  z-40">
+    <div className="absolute h-screen w-2/3 md:w-[14rem] z-40 ">
       <Menu
         className="text-left bg-sider-blue space-y-0.5 pb-2 h-full "
         mode="inline"
         defaultSelectedKeys={["3"]}
         items={items1}
-        onClick={(info) => naviagate('/'+info.key)}
+        onClick={(info) => {
+          naviagate('/'+info.key);
+          setIsSideMenuHidden(false)
+      }}
       />
     </div>
   );
