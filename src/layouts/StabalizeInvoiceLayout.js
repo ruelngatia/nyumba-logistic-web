@@ -1,4 +1,4 @@
-import { Button, Menu, Table } from 'antd'
+import { Button, Table } from 'antd'
 import Search from 'antd/es/input/Search'
 import React from 'react'
 

@@ -1,6 +1,6 @@
-import { Avatar, Badge, Dropdown, Layout, Menu, Space } from "antd";
+import { Avatar, Badge, Dropdown, Layout, Space } from "antd";
 import "./App.css";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Content, Header } from "antd/es/layout/layout";
 import Sider from "antd/es/layout/Sider";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -14,54 +14,13 @@ import Tenants from "./pages/Tenants";
 import Finances from "./pages/Finances";
 import Invoice from "./pages/Invoice";
 import Communication from "./pages/Communication";
+import Analysis from "./pages/Analysis";
+import Settings from "./pages/Settings";
+import Maintenance from "./pages/Maintenance";
 
 function App() {
   const [isSideMenuHidden, setIsSideMenuHidden] = useState(false);
   const screen = useMediaQuery('(min-width:768px)');
-  const navigate = useNavigate()
-
-  const items1 = [
-    {
-      key: "",
-      label: "Dashboard",
-    },
-    {
-      key: "property",
-      label: "Property",
-    },
-    {
-      key: "tenants",
-      label: "Tenants",
-    },
-    {
-      key: "finances",
-      label: "Fainances",
-    },
-    {
-      key: "maintainance",
-      label: "Maintainance",
-    },
-    {
-      key: "invoices",
-      label: "Invoinces",
-    },
-    {
-      key: "reports",
-      label: "Reports",
-    },
-    {
-      key: "communications",
-      label: "Communications",
-    },
-    {
-      key: "analysis",
-      label: "Analysis",
-    },
-    {
-      key: "settings",
-      label: "Settings",
-    },
-  ];
 
   const items = [
     {
@@ -150,8 +109,11 @@ function App() {
                 <Route path="/property" element={<Property/>} />
                 <Route path="/tenants" element={<Tenants/>} />
                 <Route path="/finances" element={<Finances/>} />
+                <Route path="/maintenance" element={<Maintenance/>} />
                 <Route path="/invoices" element={<Invoice/>} />
                 <Route path="/communications" element={<Communication/>} />
+                <Route path="/analysis" element={<Analysis/>} />
+                <Route path="/settings" element={<Settings/>} />
               </Routes>
             </Content>
           </Layout>

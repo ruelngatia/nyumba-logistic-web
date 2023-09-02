@@ -20,11 +20,11 @@ export default function SideMenu({setIsSideMenuHidden}) {
       label: "Tenants",
     },
     {
-      key: "fainances",
-      label: "Fainances",
+      key: "finances",
+      label: "Finances",
     },
     {
-      key: "maintainance",
+      key: "maintenance",
       label: "Maintainance",
     },
     {
