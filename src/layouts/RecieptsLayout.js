@@ -2,6 +2,7 @@ import { Download } from '@mui/icons-material'
 import { Dropdown, Table } from 'antd'
 import Search from 'antd/es/input/Search'
 import React from 'react'
+import CustomRangePicker from '../components/CustomRangePicker'
 
 export default function RecieptsLayout() {
     const items = [
@@ -40,6 +41,12 @@ export default function RecieptsLayout() {
             title: "Tenant",
             key: 'tenant',
             dataIndex: 'tenant'
+        },
+        {
+            title: "Date",
+            key: 'date',
+            dataIndex: 'date',
+            filterDropdown: <CustomRangePicker/>
         }
     ]
 
@@ -60,15 +67,17 @@ export default function RecieptsLayout() {
     <div>
         <div className='flex flex-row justify-between'>
             <Search className='w-4/5 md:w-1/4 ' placeholder='search' size='middle'/>
-            <Dropdown.Button
-                icon={<Download fontSize='1.5em'/>}
-                menu={{items}}
-                // loading={true}
-            >
-                Downlaod
-            </Dropdown.Button>
+            <span className='float-right'>
+                <Dropdown.Button
+                    icon={<Download fontSize='1.5em'/>}
+                    menu={{items}}
+                    // loading={true}
+                >
+                    Downlaod
+                </Dropdown.Button>
+            </span>
         </div>
-        <div className='mt-8'>
+        <div className='mt-4'>
             <Table columns={columns} dataSource={data} scroll={{x: true}}/>
         </div>
     </div>

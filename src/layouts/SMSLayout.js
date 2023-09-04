@@ -1,6 +1,7 @@
 import { Table } from 'antd'
 import Search from 'antd/es/input/Search'
 import React from 'react'
+import CustomRangePicker from '../components/CustomRangePicker'
 
 export default function SMSLayout() {
 
@@ -8,7 +9,8 @@ export default function SMSLayout() {
         {
             title: 'Sent At',
             key: 'sentAt',
-            dataIndex: 'sentAt'
+            dataIndex: 'sentAt',
+            filterDropdown: <CustomRangePicker/>
         },
         {
             title: 'Recipient',

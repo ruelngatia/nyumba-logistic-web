@@ -1,6 +1,7 @@
 import { Button, Table } from 'antd'
 import Search from 'antd/es/input/Search'
 import React from 'react'
+import CustomRangePicker from '../components/CustomRangePicker'
 
 export default function VacatedTenantLayout() {
     const columns = [
@@ -53,12 +54,14 @@ export default function VacatedTenantLayout() {
         {
             title: 'From',
             key: 'from',
-            dataIndex: 'from'
+            dataIndex: 'from',
+            filterDropdown: <CustomRangePicker/>
         },
         {
             title: 'To',
             key: 'to',
-            dataIndex: 'to'
+            dataIndex: 'to',
+            filterDropdown: <CustomRangePicker/>
         },
         {
             title: 'Last Balance',

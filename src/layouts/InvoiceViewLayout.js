@@ -1,6 +1,7 @@
 import { Button, Space, Table, Typography } from 'antd'
 import Search from 'antd/es/input/Search'
 import React from 'react'
+import CustomRangePicker from '../components/CustomRangePicker'
 
 export default function InvoiceViewLayout() {
 
@@ -23,7 +24,8 @@ export default function InvoiceViewLayout() {
         {
             title: 'Date Created',
             key: 'dateCreated',
-            dataIndex: 'dateCreated'
+            dataIndex: 'dateCreated',
+            filterDropdown: <CustomRangePicker/>
         },
         {
             title: 'Tenant',
@@ -62,9 +64,9 @@ export default function InvoiceViewLayout() {
     }
 
   return (
-    <div>
+    <div className='text-left'>
         <Search className="w-4/5 md:w-1/4 " placeholder='Search' />
-        <div className='flex flex-col xl:flex-row gap-3'>
+        <div className='flex flex-col xl:flex-row gap-3 mt-2'>
             <Table className='w-full xl:w-5/6' columns={columns} scroll={{x: true}} expandable={{expandedRowRender: expandable, defaultExpandedRowKeys: ['0']}}/>
             <div className=' grid grid-col-2 md:grid-cols-2 xl:grid-cols-1 mt-4 xl:ml-3 gap-2 '>
                 <Button >Send Invoice</Button>

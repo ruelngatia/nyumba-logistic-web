@@ -1,6 +1,7 @@
 import { Table } from 'antd'
 import Search from 'antd/es/input/Search'
 import React from 'react'
+import CustomRangePicker from '../components/CustomRangePicker'
 
 export default function SessionsLayout() {
 
@@ -29,6 +30,12 @@ export default function SessionsLayout() {
             title: 'Paid',
             key: 'paid',
             dataIndex: 'paid'
+        },
+        {
+            title: 'Date',
+            key: 'date',
+            dataIndex: 'date',
+            filterDropdown: <CustomRangePicker/>
         },
         {
             title: 'Invoices Closed',

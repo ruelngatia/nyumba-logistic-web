@@ -1,6 +1,7 @@
 import { Dropdown, Table, Button, Space } from "antd";
 import Search from "antd/es/input/Search";
 import React from "react";
+import CustomRangePicker from "../components/CustomRangePicker";
 
 export default function PaymentsLayout() {
   const years = [
@@ -65,6 +66,12 @@ export default function PaymentsLayout() {
       dataIndex: "amount"
     },
     {
+      title: "Date paid",
+      key: "datePaid",
+      dataIndex: "datePaid",
+      filterDropdown: <CustomRangePicker/>
+    },
+    {
       title: "User",
       key: "user",
       dataIndex: "nature"
@@ -105,49 +112,11 @@ export default function PaymentsLayout() {
           size=""
         />
 
-        <Space className="hidden md:inline-flex">
-          <Dropdown menu={{ items: month }}>
-            <Button>
-              <Space>
-                Month
-                {/* <DownOutlined /> */}
-              </Space>
-            </Button>
-          </Dropdown>
-          <Dropdown menu={{items: years }}>
-            <Button>
-              <Space>
-                Year
-                {/* <DownOutlined /> */}
-              </Space>
-            </Button>
-          </Dropdown>
-        </Space>
-
         <Button className="ml-4">
           + Add Payment
         </Button>
   
       </div>
-
-      <Space className="inline-flex md:hidden mt-3">
-          <Dropdown menu={{ items: month }}>
-            <Button>
-              <Space>
-                Month
-                {/* <DownOutlined /> */}
-              </Space>
-            </Button>
-          </Dropdown>
-          <Dropdown menu={{items: years }}>
-            <Button>
-              <Space>
-                Year
-                {/* <DownOutlined /> */}
-              </Space>
-            </Button>
-          </Dropdown>
-        </Space>
 
       <div className="mt-6 md:mt-8">
         <Table columns={columns} dataSource={data} scroll={{ x: true }} />

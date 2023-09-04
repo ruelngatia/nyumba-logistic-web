@@ -1,6 +1,7 @@
 import { Button, Space, Table } from "antd";
 import Search from "antd/es/input/Search";
 import React from "react";
+import CustomRangePicker from "../components/CustomRangePicker";
 
 export default function MaintenanceExpensesLayout() {
 
@@ -24,6 +25,12 @@ export default function MaintenanceExpensesLayout() {
         title: 'Cost',
         key: 'cost',
         dataIndex: 'cost'
+       },
+       {
+        title: 'Date',
+        key: 'date',
+        dataIndex: 'date',
+        filterDropdown: <CustomRangePicker/>
        },
        {
         title: 'User',

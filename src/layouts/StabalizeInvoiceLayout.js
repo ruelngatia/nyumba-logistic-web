@@ -1,6 +1,7 @@
 import { Button, Table } from 'antd'
 import Search from 'antd/es/input/Search'
 import React from 'react'
+import CustomRangePicker from '../components/CustomRangePicker'
 
 export default function StabalizeInvoiceLayout() {
 
@@ -39,6 +40,12 @@ export default function StabalizeInvoiceLayout() {
             title: 'User',
             key: 'user',
             dataIndex: 'user'
+        },
+        {
+            title: 'Date',
+            key: 'date',
+            dataIndex: 'date',
+            filterDropdown: <CustomRangePicker/>
         },
         {
             title: 'Reason',

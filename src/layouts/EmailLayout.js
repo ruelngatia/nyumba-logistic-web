@@ -1,6 +1,7 @@
 import { Table, message } from 'antd'
 import Search from 'antd/es/input/Search'
 import React from 'react'
+import CustomRangePicker from '../components/CustomRangePicker'
 
 export default function EmailLayout() {
 
@@ -8,7 +9,8 @@ export default function EmailLayout() {
         {
             title: 'Sent At',
             key: 'sentAt',
-            dataIndex: 'sentAt'
+            dataIndex: 'sentAt',
+            filterDropdown: <CustomRangePicker/>
         },
         {
             title: 'Recipient',

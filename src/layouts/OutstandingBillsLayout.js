@@ -1,6 +1,7 @@
 import { Space, Table } from 'antd'
 import Search from 'antd/es/input/Search'
 import React from 'react'
+import CustomRangePicker from '../components/CustomRangePicker'
 
 export default function OutstandingBillsLayout() {
 
@@ -24,6 +25,12 @@ export default function OutstandingBillsLayout() {
             title: 'Amount Owed',
             key: 'amountOwed',
             dataIndex: 'amountOwed'
+        },
+        {
+            title: 'Date',
+            key: 'date',
+            dataIndex: 'date',
+            filterDropdown: <CustomRangePicker/>
         }
     ]
 
