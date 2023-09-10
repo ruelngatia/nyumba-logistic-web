@@ -2,6 +2,8 @@ import { Tabs } from 'antd'
 import React from 'react'
 import SettingsViewLayout from '../layouts/SettingsViewLayout'
 import SettingsAdvancedLayout from '../layouts/SettingsAdvancedLayout'
+import AddProfileSettingsFrom from '../forms/AddProfileSettingsFrom'
+import SettingsAddUserForm from '../forms/SettingsAddUserForm'
 
 export default function Settings() {
 
@@ -9,7 +11,7 @@ export default function Settings() {
         {
             label: 'Profile',
             key: '1',
-            children: 'sdsd'
+            children: <AddProfileSettingsFrom/>
         },
         {
             label: 'View',
@@ -19,7 +21,7 @@ export default function Settings() {
         {
             label: 'Add',
             key: '3',
-            children: 'sdsd'
+            children: <SettingsAddUserForm/>
         },
         {
             label: 'Advanced',

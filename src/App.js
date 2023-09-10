@@ -17,6 +17,7 @@ import Communication from "./pages/Communication";
 import Analysis from "./pages/Analysis";
 import Settings from "./pages/Settings";
 import Maintenance from "./pages/Maintenance";
+import Reports from "./pages/Reports";
 
 function App() {
   const [isSideMenuHidden, setIsSideMenuHidden] = useState(false);
@@ -114,6 +115,7 @@ function App() {
                 <Route path="/communications" element={<Communication/>} />
                 <Route path="/analysis" element={<Analysis/>} />
                 <Route path="/settings" element={<Settings/>} />
+                <Route path="/reports" element={<Reports/>} />
               </Routes>
             </Content>
           </Layout>

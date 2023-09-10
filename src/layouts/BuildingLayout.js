@@ -1,9 +1,12 @@
 import { Button, Table } from 'antd'
 import Search from 'antd/es/input/Search'
-import React from 'react'
+import React, { useState } from 'react'
+import CustomModal from '../components/CustomModal'
+import AddBuildingForm from '../forms/AddBuildingForm'
 
 export default function BuildingLayout() {
 
+   const [isAddBuilding, setIsAddbuilding] = useState(false)
     const columns = [
         {
            title: 'No',
@@ -70,8 +73,9 @@ export default function BuildingLayout() {
   return (
     <div className='p-6'>
         <Search placeholder='Search' className='w-4/5 md:w-1/4 float-left mb-4'/>
-        <Button className='float-right ml-2'> Add </Button>
+        <Button className='float-right ml-2' onClick={()=> setIsAddbuilding(true)}> Add </Button>
         <Table scroll={{x: true}} dataSource={data} columns={columns}/>
+        <CustomModal children={<AddBuildingForm/>} open={isAddBuilding} width={900} setClose={setIsAddbuilding} title={'Add BUilding'}/>
     </div>
   )
 }

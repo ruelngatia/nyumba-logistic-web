@@ -1,8 +1,14 @@
 import { Button, Menu, Table } from 'antd'
 import Search from 'antd/es/input/Search'
-import React from 'react'
+import React, { useState } from 'react'
+import MultiPageModal from '../components/MultiPageModal'
+import AddTenantDetailsForm from '../forms/AddTenantDetailsForm'
+import AddTenantContactInfo from '../forms/AddTenantContactInfo'
 
 export default function TenantViewLayout() {
+
+   const [isAdd, setIsAdd] = useState()
+
     const columns = [
         {
            title: 'No',
@@ -86,8 +92,9 @@ export default function TenantViewLayout() {
   return (
     <div className='p-6'>
         <Search placeholder='Search' className='w-4/5 md:w-1/4 float-left mb-4'/>
-        <Button className='float-right ml-2'> Add </Button>
+        <Button className='float-right ml-2' onClick={() => setIsAdd(true)}> Add </Button>
         <Table scroll={{x: true}} dataSource={data} columns={columns}/>
+        <MultiPageModal title="Add Tenant" open={isAdd} setIsOpen={setIsAdd} childred={[<AddTenantDetailsForm/>,<AddTenantContactInfo/>]}/>
     </div>
   )
 }

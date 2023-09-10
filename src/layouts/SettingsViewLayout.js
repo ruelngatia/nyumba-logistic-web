@@ -1,11 +1,14 @@
 import { Button, Checkbox, Dropdown, Space, Switch, Table } from 'antd'
 import Search from 'antd/es/input/Search'
-import React from 'react'
+import React, { useState } from 'react'
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import EditIcon from '@mui/icons-material/Edit';
+import CustomModal from '../components/CustomModal'
+import SettingsAddUserForm from '../forms/SettingsAddUserForm';
 
 export default function SettingsViewLayout() {
 
+    const [isEdit, setIsEdit] = useState(false)
     const items = [
         {
             label: (
@@ -19,7 +22,7 @@ export default function SettingsViewLayout() {
         {
             label: 'Edit',
             key: '2',
-            icon: <EditIcon/>
+            icon: <EditIcon/>,
         },
         {
             label: (
@@ -66,7 +69,7 @@ export default function SettingsViewLayout() {
             key: 'options',
             // dataIndex: 'options'
             render: ()=>(
-                <Dropdown menu={{items}}>
+                <Dropdown menu={{items, onClick}} >
                     <MoreHorizIcon/>
                 </Dropdown>
             )
@@ -84,11 +87,18 @@ export default function SettingsViewLayout() {
         }
     ]
 
+    const onClick = ({ key }) => {
+        if(key === '2'){
+            setIsEdit(true)
+        }
+      };
+
   return (
     <div className='p-6'>
         <Search placeholder='Search' className='w-4/5 md:w-1/4 float-left mb-4'/>
         <Button className='float-right ml-2'> Add </Button>
         <Table scroll={{x: true}} columns={columns} dataSource={data}/>
+        <CustomModal width={700} title={'Edit user'} open={isEdit} setClose={setIsEdit} okText={'Save'} children={<SettingsAddUserForm/>}/>
     </div>
   )
 }

@@ -4,11 +4,14 @@ import building from '../assets/two-city-buildings-svgrepo-com.svg'
 import NoticeTable from '../components/NoticeTable'
 import ReminderTable from '../components/ReminderTable'
 import { Button } from 'antd'
-import AddReminder from '../components/AddReminder'
+import CustomModal from '../components/CustomModal'
+import ReminderForm from '../forms/ReminderForm'
+import PotentialTenantForm from '../forms/PotentialTenantForm'
 
 export default function Dashboard() {
 
   const [isAddReminder, setIsAddReminder] = useState(false);
+  const [isAddPotential, setIsAddPotential] = useState(false);
   
   return (
     <div className='m-8'>
@@ -28,13 +31,15 @@ export default function Dashboard() {
         <NoticeTable />
         <ReminderTable setIsAddReminder={setIsAddReminder} isAddReminder={isAddReminder}/>
         <div className='grid grid-cols-2 lg:grid-cols-1 gap-2'>
-          <Button>Potential </Button>
+          <Button onClick={()=> setIsAddPotential(!isAddPotential)}>Potential </Button>
           <Button>Add Tenants</Button>
           <Button>Add Payment</Button>
           <Button>Add Billing</Button>
         </div>
       </section>
-      <AddReminder isAddReminder={isAddReminder} setIsAddReminder={setIsAddReminder}/>
+      <CustomModal title={'Add Reminder'} open={isAddReminder} children={<ReminderForm/>} okText={"Add"} setClose={setIsAddReminder}/>
+      <CustomModal title={"Add potential client"} open={isAddPotential} children={<PotentialTenantForm/>} okText={"Add"} setClose={setIsAddPotential}/>
+      {/* <AddReminder isAddReminder={isAddReminder} setIsAddReminder={setIsAddReminder}/> */}
     </div>
   )
 }
