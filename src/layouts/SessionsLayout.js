@@ -50,7 +50,7 @@ export default function SessionsLayout() {
     ]
 
   return (
-    <div className='p-6'>
+    <div className='p-1 lg:p-6'>
         <Search placeholder='Search' className='w-4/5 md:w-1/4 float-left mb-4'/>
         <Table columns={columns} scroll={{x: true}}/>
     </div>

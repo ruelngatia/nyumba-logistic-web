@@ -53,10 +53,9 @@ function App() {
     <div className="App h-full ">
       <Layout className="h-full">
         <Header
-          className="h-16 flex flex-row justify-between bg-primary-color text-white relative"
+          className="h-16 px-3 flex flex-row justify-between bg-primary-color text-white relative"
           style={{
-            alignItems: "center",
-            paddingInline: "1.6rem",
+            alignItems: "center"
           }}
         >
           <button onClick={() => setIsSideMenuHidden(!isSideMenuHidden)}>

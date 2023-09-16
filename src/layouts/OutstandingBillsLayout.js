@@ -36,7 +36,7 @@ export default function OutstandingBillsLayout() {
 
 
   return (
-    <div className='p-6'>
+    <div className='p-1 lg:p-6'>
         <Search placeholder='Search' className='w-4/5 md:w-1/4 float-left mb-4'/>
         <div className='block lg:inline-flex'>
             <Table className='w-full lg:w-5/6' columns={columns} scroll={{x: true}}/>

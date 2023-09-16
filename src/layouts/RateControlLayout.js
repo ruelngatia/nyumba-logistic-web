@@ -4,7 +4,7 @@ import React from "react";
 
 export default function RateControlLayout() {
   return (
-    <div className="pl-6 text-left float-left">
+    <div className="p-1 lg:p-6 text-left float-left">
       <div className=" grid grid-cols-1 md:grid-cols-2 items-end gap-3">
 
         <div>

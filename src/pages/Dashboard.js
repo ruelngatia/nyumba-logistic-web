@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import DashCard from '../components/DashCard'
 import building from '../assets/two-city-buildings-svgrepo-com.svg'
+import support from '../assets/technical-support-svgrepo-com.svg'
+import rooms from '../assets/roomsSvg.svg'
+import notification from '../assets/notifications-svgrepo-com.svg'
+import userHome from '../assets/homeUser.svg'
 import NoticeTable from '../components/NoticeTable'
 import ReminderTable from '../components/ReminderTable'
 import { Button } from 'antd'
@@ -18,13 +22,13 @@ export default function Dashboard() {
       <section>
         <div className='grid sm:grid-cols-2 lg:grid-cols-4  gap-4'>
           <DashCard src={building} text={'Units'}/>
-          <DashCard text={'Tenants'}/>
-          <DashCard text={'Vaccant rooms'}/>
-          <DashCard text={'Invoices'}/>
+          <DashCard src={userHome} text={'Tenants'}/>
+          <DashCard src={rooms} text={'Vaccant rooms'}/>
+          <DashCard src={notification} text={'Notifications'}/>
           <DashCard text={'Expected Earnings'}/>
           <DashCard text={'Total Earnings'}/>
           <DashCard text={'Unpaid bills'}/>
-          <DashCard text={'Support'}/>
+          <DashCard src={support} text={'Support'}/>
         </div>
       </section>
       <section className='flex flex-col lg:flex-row gap-4 mt-10'>

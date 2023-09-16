@@ -1,4 +1,5 @@
 import { Menu } from "antd";
+import { motion, AnimatePresence } from "framer-motion";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -49,17 +50,24 @@ export default function SideMenu({setIsSideMenuHidden}) {
     },
   ];
   return (
-    <div className="absolute h-screen w-2/3 md:w-[14rem] z-40 ">
-      <Menu
-        className="text-left bg-sider-blue space-y-0.5 pb-2 h-full "
-        mode="inline"
-        defaultSelectedKeys={["3"]}
-        items={items1}
-        onClick={(info) => {
-          naviagate('/'+info.key);
-          setIsSideMenuHidden(false)
-      }}
-      />
-    </div>
+    <AnimatePresence>
+      <motion.div className="absolute h-screen w-2/3 md:w-[14rem] z-40 "
+        initial={{ x: '-100%' }}
+        animate={{ x: '0%' }}
+        exit={{ x: '-100%' }}
+        transition={{ duration: 0.5 }}
+      >
+        <Menu
+          className="text-left bg-sider-blue space-y-0.5 pb-2 h-full "
+          mode="inline"
+          defaultSelectedKeys={["3"]}
+          items={items1}
+          onClick={(info) => {
+            naviagate('/'+info.key);
+            setIsSideMenuHidden(false)
+        }}
+        />
+      </motion.div>
+    </AnimatePresence>
   );
 }

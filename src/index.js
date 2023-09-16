@@ -17,6 +17,7 @@ root.render(
             fontFamily: 'Montserrat',
             colorPrimary: "#0082C6",
             colorBgLayout: '#ffff',
+            colorPrimaryBg: '#336580',
           }
         }}
       >

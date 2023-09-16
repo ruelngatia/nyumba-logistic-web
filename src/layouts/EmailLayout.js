@@ -60,7 +60,7 @@ export default function EmailLayout() {
     ]
 
   return (
-    <div className='p-9'>
+    <div className='p-1 lg:p-6'>
         <Search className='w-4/5 md:w-1/4 float-left' placeholder='Search'/>
         <Table className='pt-4' columns={columns} scroll={{x: true}} />
     </div>

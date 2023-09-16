@@ -71,7 +71,7 @@ export default function BuildingLayout() {
     ]
 
   return (
-    <div className='p-6'>
+    <div className='p-1 lg:p-6'>
         <Search placeholder='Search' className='w-4/5 md:w-1/4 float-left mb-4'/>
         <Button className='float-right ml-2' onClick={()=> setIsAddbuilding(true)}> Add </Button>
         <Table scroll={{x: true}} dataSource={data} columns={columns}/>

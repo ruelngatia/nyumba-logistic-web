@@ -1,9 +1,12 @@
 import { Button, Divider, Form, Input, Radio, Select } from "antd";
 import React, { useState } from "react";
+import CustomModal from "../components/CustomModal"
+import InitialBillForm from "./InitialBillForm";
 
 export default function AddTenantDetailsForm() {
   const [gender, setGender] = useState();
   const [inhabitants, setInhabitants] = useState();
+  const [isInitialBill, setisInitialBill] = useState(false);
 
   const IDOptions = [
     {
@@ -21,9 +24,9 @@ export default function AddTenantDetailsForm() {
     <Form layout="vertical">
       <div className="flex flex-row items-center">
         <Form.Item label="Unit">
-          <Select />
+          <Select style={{width: 250}}/>
         </Form.Item>
-        <Button>Initial Bill</Button>
+        <Button className="ml-2" onClick={() => setisInitialBill(true)}>Initial Bill</Button>
         <Button className="ml-auto">Existing Tenant</Button>
       </div>
       <Form.Item>
@@ -101,6 +104,7 @@ export default function AddTenantDetailsForm() {
       ) : (
         <> </>
       )}
+      <CustomModal open={isInitialBill} setClose={setisInitialBill} title={"Room A5"} children={<InitialBillForm/>}/>
     </Form>
   );
 }

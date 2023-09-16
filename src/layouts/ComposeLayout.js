@@ -1,10 +1,16 @@
 import { Button, Input, List, Radio } from "antd";
 import TextArea from "antd/es/input/TextArea";
-import React from "react";
+import React, { useState } from "react";
+import CustomModal from "../components/CustomModal";
+import TenantsList from "./TenantsList";
 
 export default function ComposeLayout() {
+
+  const [isAddRecipient, setIsAddRecipient] = useState(false) 
+  const [recipientMode, setRecipientMode] = useState() 
+
   return (
-    <div className="p-6 text-left">
+    <div className="p-1 lg:p-6 text-left">
       <div className="inline-flex space-x-12">
         <div className="text-left ">
           <span>Mode</span>
@@ -17,9 +23,11 @@ export default function ComposeLayout() {
         <div className="text-left">
           <span className="text-left">Recipients</span>
           <br />
-          <Radio.Group>
-            <Radio>All</Radio>
-            <Radio>Selected</Radio>
+          <Radio.Group onChange={(val) =>{ setRecipientMode(val.target.value);
+            if (val.target.value === 2) setIsAddRecipient(true)
+          }}>
+            <Radio id="1" value={1}>All</Radio>
+            <Radio id="2" value={2}>Selected</Radio>
           </Radio.Group>
         </div>
       </div>
@@ -43,6 +51,7 @@ export default function ComposeLayout() {
           Send
         </Button>
       </div>
+      <CustomModal title={"Add recipients"} okText={"Done"} open={isAddRecipient} setClose={setIsAddRecipient} children={<TenantsList/>}/>
     </div>
   );
 }

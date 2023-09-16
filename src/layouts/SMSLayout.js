@@ -45,7 +45,7 @@ export default function SMSLayout() {
     ]
 
   return (
-    <div className='p-6'>
+    <div className='p-1 lg:p-6'>
         <Search className='w-4/5 md:w-1/4 float-left' placeholder='Search'/>
         <Table columns={columns} scroll={{x: true}}/>
     </div>

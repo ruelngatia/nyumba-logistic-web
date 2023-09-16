@@ -48,7 +48,7 @@ export default function OperationalExpenses() {
     ]
 
   return (
-    <div className='p-6'>
+    <div className='p-1 lg:p-6'>
         <Search placeholder='Search' className='w-4/5 md:w-1/4 float-left mb-4'/>
         <Space className='float-right ml-2'>
             <span>Total Operational Cost: KSH 1000</span>

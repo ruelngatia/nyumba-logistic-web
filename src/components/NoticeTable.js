@@ -51,8 +51,8 @@ export default function NoticeTable() {
 
   return (
     <div className=' shadow-1xl lg:w-2/4'>
-        <Typography>Notice Board</Typography>
-        <Table size='middle' pagination={{hideOnSinglePage: true}} dataSource={data} columns={columns}/>
+        
+        <Table title={()=><Typography>Notice Board</Typography>} size='middle' pagination={{hideOnSinglePage: true}} dataSource={data} columns={columns}/>
     </div>
   )
 }

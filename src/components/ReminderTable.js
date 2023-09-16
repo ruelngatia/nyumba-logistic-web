@@ -32,10 +32,9 @@ export default function ReminderTable({isAddReminder,setIsAddReminder}) {
     ]
 
   return (
-    <div className='shadow-1xl w-full lg:w-2/4'>
-      <Typography>Reminder</Typography>
-      <Button className='float-right mr-2 bg-primary-color text-white' onClick={()=>setIsAddReminder(!isAddReminder)}>Add</Button>
-      <Table pagination={{hideOnSinglePage:true}} columns={columns} dataSource={data}/>
+    <div className='shadow-1xl w-full lg:w-2/4 relative'>
+      <Button className='top-3 absolute right-2 z-10 float-right bg-primary-color text-white' onClick={()=>setIsAddReminder(!isAddReminder)}>Add</Button>
+      <Table title={()=><Typography>Reminder</Typography>} pagination={{hideOnSinglePage:true}} columns={columns} dataSource={data}/>
     </div>
   )
 }

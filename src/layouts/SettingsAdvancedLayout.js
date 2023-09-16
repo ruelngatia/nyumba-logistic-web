@@ -49,7 +49,7 @@ export default function SettingsAdvancedLayout() {
 
   return (
     <div>
-        <Button className='float-right'>
+        <Button className='float-right mb-2'>
             <AddIcon fontSize='20px'/> Enroll user
         </Button>
         <Table columns={columns} dataSource={data} scroll={{x: true}}/>
