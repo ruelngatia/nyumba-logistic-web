@@ -1,6 +1,6 @@
 import { Avatar, Badge, Dropdown, Layout, Space } from "antd";
 import "./App.css";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import { Content, Header } from "antd/es/layout/layout";
 import Sider from "antd/es/layout/Sider";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -33,6 +33,7 @@ function App() {
 
 
   const screen = useMediaQuery('(min-width:768px)');
+  const navigator = useNavigate()
 
   const items = [
     {
@@ -49,15 +50,16 @@ function App() {
     }
   ];
 
-  const notifications = [
+  const itemsLogout = [
     {
-      label: "New payment recieved",
+      label: "Logout",
       key: "1",
     },
     {
-      label: "John doe vacated",
+      label: "notification",
       key: "2",
-    },
+      onClick: (()=> navigator("/notifications"))
+    }
   ];
 
   let location = useLocation();
@@ -97,7 +99,7 @@ function App() {
                 </Space>
               </a>
             </Dropdown>
-            <Dropdown menu={{items: notifications}}>
+            <Dropdown menu={{items: itemsLogout}}>
               <Badge count={2} className="">
                 <Avatar>C</Avatar>
               </Badge>

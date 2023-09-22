@@ -48,9 +48,13 @@ export default function UnitsLayout() {
             title: 'Action',
             key: 'action',
             dataIndex: '',
-            render: () => <Button>Update</Button>
+            render: () => <Button onClick={handleUpdate}>Update</Button>
          },
     ]
+
+    const handleUpdate = ()=>{
+      setIsAddBuilding(true)
+    }
 
     const data = [
         {

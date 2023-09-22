@@ -59,9 +59,38 @@ export default function FinanceRefundsLayout() {
         }
     ]
 
+    const expandedRowRenderColumns = [
+        {
+            title: "No",
+            key: "no",
+            dataIndex: "no"
+        },
+        {
+            title: "Name",
+            key: "name",
+            dataIndex: "name"
+        },
+        {
+            title: "Damage",
+            key: "damage",
+            dataIndex: "damage"
+        },
+        {
+            title: "Amount",
+            key: "amount",
+            dataIndex: "amount"
+        }
+    ]
+
+    const expandedRowRender = ()=>{
+        return (
+            <Table columns={expandedRowRenderColumns} scroll={{x: true}} />
+        );
+    }
+
   return (
     <div className='ml-2'>
-        <Table columns={columns} dataSource={data} scroll={{x: true}}/>
+        <Table columns={columns} expandable={{expandedRowRender: expandedRowRender}} dataSource={data} scroll={{x: true}}/>
         <CustomModal title={"Refund funds"} okText={"Pay"} open={isRefund} setClose={setIsRefund} children={<RefundComponent/>}/>
         <CustomModal title={"Add Damages"} okText={"Add"} open={isDamage} setClose={setisDamage} children={<DamageForm/>}/>
     </div>
