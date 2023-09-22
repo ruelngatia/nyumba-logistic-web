@@ -1,10 +1,11 @@
 import { Menu } from "antd";
 import { motion, AnimatePresence } from "framer-motion";
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function SideMenu({setIsSideMenuHidden}) {
 
+  let location = useLocation()
   const naviagate = useNavigate();
 
   const items1 = [
@@ -60,7 +61,7 @@ export default function SideMenu({setIsSideMenuHidden}) {
         <Menu
           className="text-left bg-sider-blue space-y-0.5 pb-2 h-full "
           mode="inline"
-          defaultSelectedKeys={["3"]}
+          selectedKeys={[location.pathname.replace('/','')]}
           items={items1}
           onClick={(info) => {
             naviagate('/'+info.key);

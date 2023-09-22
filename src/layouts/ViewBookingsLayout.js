@@ -8,6 +8,10 @@ export default function ViewBookingsLayout() {
         {
             label: 'Claim',
             key: '1'
+        },
+        {
+            label: 'Refund',
+            key: '2'
         }
     ]
 

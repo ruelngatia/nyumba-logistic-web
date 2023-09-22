@@ -1,4 +1,4 @@
-import { Form, Input, Select } from "antd";
+import { Checkbox, Form, Input, Select } from "antd";
 import TextArea from "antd/es/input/TextArea";
 import React from "react";
 
@@ -13,6 +13,9 @@ export default function StabalizeInvoiceForm() {
     </Form.Item>
     <Form.Item label="Reason" rules={[{required: true, message: 'Reason is required'}]}>
       <TextArea rows={4} />
+    </Form.Item>
+    <Form.Item>
+      <Checkbox>Send message</Checkbox>
     </Form.Item>
   </Form>
   )

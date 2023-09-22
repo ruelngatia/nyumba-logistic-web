@@ -1,11 +1,11 @@
 import { Avatar, Badge, Dropdown, Layout, Space } from "antd";
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { Content, Header } from "antd/es/layout/layout";
 import Sider from "antd/es/layout/Sider";
 import MenuIcon from "@mui/icons-material/Menu";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Dashboard from "./pages/Dashboard";
 import SideMenu from "./components/SideMenu";
 import { useMediaQuery } from "@mui/material";
@@ -18,9 +18,20 @@ import Analysis from "./pages/Analysis";
 import Settings from "./pages/Settings";
 import Maintenance from "./pages/Maintenance";
 import Reports from "./pages/Reports";
+import MultiPageModal from "./components/MultiPageModal";
+import AddTenantDetailsForm from "./forms/AddTenantDetailsForm";
+import AddTenantContactInfo from "./forms/AddTenantContactInfo";
+import CustomModal from "./components/CustomModal";
+import ExpectedEarnings from "./layouts/ExpectedEarnings";
+import ImagesForm from "./forms/ImagesForm";
+import Notifications from "./pages/Notifications";
 
 function App() {
   const [isSideMenuHidden, setIsSideMenuHidden] = useState(false);
+  const [isAddTenant, setIsAddTenant] = useState(false);
+  const [isExpectedEarnings, setIsExpectedEarnings] = useState(false);
+
+
   const screen = useMediaQuery('(min-width:768px)');
 
   const items = [
@@ -48,6 +59,17 @@ function App() {
       key: "2",
     },
   ];
+
+  let location = useLocation();
+
+  useEffect(()=>{
+    if((location.search === '?modal=addTenant' && (location.pathname === '/' || location.pathname === '/tenants'))){
+       setIsAddTenant(true)
+    }else if(location.search === '?modal=expectedEarnings' && location.pathname === '/'){
+      setIsExpectedEarnings(true)
+    }
+
+  },[location])
 
   return (
     <div className="App h-full ">
@@ -91,16 +113,6 @@ function App() {
               hidden={!screen}
               className=" h-screen "
             >
-              {/* <Menu
-                className="text-left  bg-sider-blue space-y-0.5"
-                mode="inline"
-                defaultSelectedKeys={["3"]}
-                items={items1}
-                onClick={(info)=>{
-                  navigate('/'+info.key)
-                  console.log(info);
-                }}
-              /> */}
               <SideMenu setIsSideMenuHidden={setIsSideMenuHidden}/>
             </Sider>
             <Content className="">
@@ -115,11 +127,14 @@ function App() {
                 <Route path="/analysis" element={<Analysis/>} />
                 <Route path="/settings" element={<Settings/>} />
                 <Route path="/reports" element={<Reports/>} />
+                <Route path="/notifications" element={<Notifications/>} />
               </Routes>
             </Content>
           </Layout>
         </Content>
       </Layout>
+      <MultiPageModal title="Add Tenant" open={isAddTenant} setIsOpen={setIsAddTenant} childred={[<AddTenantDetailsForm/>, <ImagesForm/>,<AddTenantContactInfo/>]}/>
+      <CustomModal width={700} title={"Expected Earnings"} open={isExpectedEarnings} setClose={setIsExpectedEarnings} children={<ExpectedEarnings/>}/>
     </div>
   );
 }

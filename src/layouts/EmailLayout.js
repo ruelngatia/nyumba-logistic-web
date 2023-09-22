@@ -1,4 +1,4 @@
-import { Table, message } from 'antd'
+import { Table } from 'antd'
 import Search from 'antd/es/input/Search'
 import React from 'react'
 import CustomRangePicker from '../components/CustomRangePicker'

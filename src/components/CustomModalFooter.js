@@ -7,17 +7,13 @@ export default function CustomModalFooter({page, setPage, setIsOpen}) {
     setIsOpen(false)
   }
 
+
   return (
     <div>
-      {page === 0 ?
-       <>
-        <Button onClick={handleClose}>Cancel</Button>
-        <Button onClick={() => setPage(page + 1)}>Continue</Button>
-       </> : 
-       <>
-        <Button onClick={() => setPage(page - 1)}>Back</Button>
-        <Button>Done</Button>
-       </>}
+        {page === 0 ? <Button onClick={handleClose}>Cancel</Button>
+        : <Button onClick={() => setPage(page - 1)}>Back</Button> }
+        {page === 2? <Button>Done</Button> :<Button onClick={() => setPage(page + 1)}>Continue</Button>}
+   
     </div>
   )
 }

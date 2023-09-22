@@ -1,38 +1,9 @@
-import { Dropdown, Table, Button, Space } from "antd";
+import {Table, Button } from "antd";
 import Search from "antd/es/input/Search";
 import React from "react";
 import CustomRangePicker from "../components/CustomRangePicker";
 
 export default function PaymentsLayout() {
-  const years = [
-    {
-      key: "1",
-      label: 2010,
-    },
-    {
-      key: "2",
-      label: 2010,
-    },
-  ];
-
-  const month =[ 
-    {
-      key: "1",
-      label: "1"
-    },
-    {
-      key: "2",
-      label: "2"
-    },
-    {
-      key: "3",
-      label: "3"
-    },
-    {
-      key: "4",
-      label: "4"
-    },
-  ]
 
   const columns = [
     {
