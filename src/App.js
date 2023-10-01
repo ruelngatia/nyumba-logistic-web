@@ -25,11 +25,13 @@ import CustomModal from "./components/CustomModal";
 import ExpectedEarnings from "./layouts/ExpectedEarnings";
 import ImagesForm from "./forms/ImagesForm";
 import Notifications from "./pages/Notifications";
+import { CloseFullscreen, Fullscreen, Logout, NotificationsActive } from "@mui/icons-material";
 
 function App() {
   const [isSideMenuHidden, setIsSideMenuHidden] = useState(false);
   const [isAddTenant, setIsAddTenant] = useState(false);
   const [isExpectedEarnings, setIsExpectedEarnings] = useState(false);
+  const [isFullScreen,setIsFullScreen] = useState(false);
 
 
   const screen = useMediaQuery('(min-width:768px)');
@@ -50,15 +52,41 @@ function App() {
     }
   ];
 
+  document.addEventListener("fullscreenchange",(event)=>{
+    if(document.fullscreenElement){
+      setIsFullScreen(true);
+    }else{
+      setIsFullScreen(false); 
+    }
+  })
+
+  const handleFullScreen = () => {
+    setIsFullScreen(!isFullScreen);
+    if(isFullScreen){
+      document.exitFullscreen()
+    }else{
+      document.body.requestFullscreen()
+    }
+  }
+
   const itemsLogout = [
     {
       label: "Logout",
       key: "1",
+      icon: <Logout/>
     },
     {
       label: "notification",
       key: "2",
-      onClick: (()=> navigator("/notifications"))
+      onClick: (()=> navigator("/notifications")),
+      icon: <NotificationsActive/>
+    },
+    {
+      label: isFullScreen ? "Exit Full screen" : "Full Screen",
+      key: "3",
+      icon: isFullScreen ?  <CloseFullscreen/> : <Fullscreen/> ,
+      onClick: handleFullScreen,
+      disabled: !screen
     }
   ];
 
