@@ -3,6 +3,7 @@ import React from 'react'
 import InvoiceViewLayout from '../layouts/InvoiceViewLayout'
 import AddInvoiceLayout from '../layouts/AddInvoiceLayout'
 import StabalizeInvoiceLayout from '../layouts/StabalizeInvoiceLayout'
+import InvoiceBreakdownLayout from '../layouts/InvoiceBreakdownLayout'
 
 
 export default function Invoice() {
@@ -22,6 +23,11 @@ export default function Invoice() {
         label: "Stabilize",
         key: "3",
         children: <StabalizeInvoiceLayout/>
+       },
+       {
+        label: "Invoice Breakdown",
+        key: "4",
+        children: <InvoiceBreakdownLayout/>
        }
     ]
 

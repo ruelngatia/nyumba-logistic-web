@@ -1,9 +1,31 @@
-import { Button, Menu, Table } from 'antd'
+import { Edit } from '@mui/icons-material'
+import { Button, Dropdown, Space, Switch, Table } from 'antd'
 import Search from 'antd/es/input/Search'
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
 
 export default function TenantViewLayout() {
+
+
+   const items = [
+      {
+         key: '1',
+         label: (<Space> <Switch/> Notice</Space>)
+      },
+      {
+         key: '2',
+         label: 'Vacate'
+      },
+      {
+         key: '3',
+         label: 'Preview'
+      },
+      {
+         key: '4',
+         label: (<Space><Edit/> Edit</Space>),
+         onClick: ()=> navigator('/tenants?modal=addTenant')
+      }
+    ]
 
     const columns = [
         {
@@ -65,7 +87,11 @@ export default function TenantViewLayout() {
             title: 'Action',
             key: 'action',
             dataIndex: '',
-            render: () => <Menu></Menu>
+            render: () => (
+            <Dropdown menu={{items}} >
+               <a>Actions</a>
+            </Dropdown>
+            )
          },
     ]
 

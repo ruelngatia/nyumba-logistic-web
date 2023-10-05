@@ -20,6 +20,7 @@ export default function ReminderForm() {
         <Radio.Group value={timeMode} onChange={(e)=> setTimeMode(e.target.value)}>
             <Radio value={1}>Fixed</Radio>
             <Radio value={2}>Range</Radio>
+            <Radio value={3}>Recurrent</Radio>
         </Radio.Group>
       </Form.Item>
       <Form.Item hidden={!(timeMode === 1)}>

@@ -113,11 +113,11 @@ function App() {
           <button onClick={() => setIsSideMenuHidden(!isSideMenuHidden)}>
             <MenuIcon fontSize="large" />
           </button>
-          <a href="#" className="hover:text-white">
-            <h2 className="text-2xl font-bold hidden md:block">
-              Nyumba logistic
-            </h2>
-          </a>
+
+          <h2 className="text-2xl font-bold hidden md:block cursor-pointer" onClick={()=> navigator('/')}>
+            Nyumba logistic
+          </h2>
+
           <div className="flex flex-row gap-3 items-center">
             <Dropdown menu={{ items }}>
               <a onClick={(e) => e.preventDefault()}>

@@ -40,7 +40,7 @@ export default function Dashboard() {
         <div className='grid grid-cols-2 lg:grid-cols-1 gap-2'>
           <Button onClick={()=> setIsAddPotential(!isAddPotential)}>Potential </Button>
           <Button onClick={()=>navigate("/?modal=addTenant")}>Add Tenants</Button>
-          <Button>Add Payment</Button>
+          <Button onClick={()=> navigate("/finances")}>Add Payment</Button>
           <Button>Add Billing</Button>
         </div>
       </section>

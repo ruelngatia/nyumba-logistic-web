@@ -96,7 +96,6 @@ export default function SettingsViewLayout() {
   return (
     <div className='p-1 lg:p-6'>
         <Search placeholder='Search' className='w-4/5 md:w-1/4 float-left mb-4'/>
-        <Button className='float-right ml-2'> Add </Button>
         <Table scroll={{x: true}} columns={columns} dataSource={data}/>
         <CustomModal width={700} title={'Edit user'} open={isEdit} setClose={setIsEdit} okText={'Save'} children={<SettingsAddUserForm/>}/>
     </div>

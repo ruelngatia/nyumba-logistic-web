@@ -6,11 +6,19 @@ export default function TenantsList() {
     const columns = [
         {
             title: "Room No",
-            indexKey: "roomNo"
+            key: "roomNo",
+            dataIndex: "roomno"
         },
         {
             title: "Name",
-            indexKey: "roomNo"   
+            key: "name",
+            dataIndex: "name",
+        },
+        {
+            title: "Balance",
+            key: "balance",
+            dataIndex: 'balance',
+            width: 60   
         }
     ]
 

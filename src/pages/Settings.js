@@ -19,7 +19,7 @@ export default function Settings() {
             children: <SettingsViewLayout/>
         },
         {
-            label: 'Add',
+            label: 'Add-User',
             key: '3',
             children: <SettingsAddUserForm/>
         },

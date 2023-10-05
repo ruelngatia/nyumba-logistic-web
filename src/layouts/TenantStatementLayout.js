@@ -1,5 +1,6 @@
-import { Table, Typography } from 'antd'
+import { Button, Table, Typography } from 'antd'
 import React from 'react'
+
 
 export default function TenantStatementLayout() {
 
@@ -43,6 +44,7 @@ export default function TenantStatementLayout() {
             <Typography>Current/Last account: </Typography>
             <Typography>Tenant: </Typography>
             <Typography className=''>As of: </Typography>
+            <Button>Download Statement </Button>
         </div>
         <div>
             <Table scroll={{x: true}} columns={columns} />
