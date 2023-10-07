@@ -4,6 +4,7 @@ import AnalysisView from '../layouts/AnalysisView'
 import SessionsLayout from '../layouts/SessionsLayout';
 import OutstandingBillsLayout from '../layouts/OutstandingBillsLayout';
 import RateControlLayout from '../layouts/RateControlLayout';
+import AnalysisSystemLogLayout from '../layouts/AnalysisSystemLogLayout';
 
 export default function Analysis() {
 
@@ -28,7 +29,11 @@ export default function Analysis() {
             key: '4',
             children: <RateControlLayout/>
         },
-        
+        {
+            label: 'System Logs',
+            key: '5',
+            children: <AnalysisSystemLogLayout/>
+        },
     ]
 
   return (

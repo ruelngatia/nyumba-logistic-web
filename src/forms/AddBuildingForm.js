@@ -62,45 +62,15 @@ export default function AddBuildingForm() {
           <Select />
         </Form.Item>
       </div>
-      <Divider orientation="left">Intergrations</Divider>
-      <div className="grid grid-cols-3">
-        <Form.Item wrapperCol={1}>
-          <Space align="end">
+      <Divider orientation="left">Notifications</Divider>
+      <div className="grid grid-cols-2">
+        <Form.Item wrapperCol={1} label="Daily report">
+          <Space >
             <Checkbox />
             <Input />
           </Space>
         </Form.Item>
-        <Form.Item wrapperCol={1}>
-          <Space align="end">
-            <Checkbox />
-            <Input />
-          </Space>
-        </Form.Item>
-        <Form.Item wrapperCol={1}>
-          <Space align="end">
-            <Checkbox />
-            <Input />
-          </Space>
-        </Form.Item>
-        <Form.Item wrapperCol={1}>
-          <Space align="end">
-            <Checkbox />
-            <Input />
-          </Space>
-        </Form.Item>
-        <Form.Item wrapperCol={1}>
-          <Space align="end">
-            <Checkbox />
-            <Input />
-          </Space>
-        </Form.Item>
-        <Form.Item wrapperCol={1}>
-          <Space align="end">
-            <Checkbox />
-            <Input />
-          </Space>
-        </Form.Item>
-        <Form.Item wrapperCol={1}>
+        <Form.Item wrapperCol={1} label="Monthly analysis">
           <Space align="end">
             <Checkbox />
             <Input />

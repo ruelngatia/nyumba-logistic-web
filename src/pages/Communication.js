@@ -3,6 +3,7 @@ import React from 'react'
 import SMSLayout from '../layouts/SMSLayout'
 import EmailLayout from '../layouts/EmailLayout'
 import ComposeLayout from '../layouts/ComposeLayout'
+import AddTemplateForm from '../forms/AddTemplateForm'
 
 export default function Communication() {
 
@@ -23,9 +24,9 @@ export default function Communication() {
             children: <ComposeLayout/>
         },
         {
-            label: 'Other',
+            label: 'Add-Template',
             key: '4',
-            children: 'qessdw6r7'
+            children: <AddTemplateForm/>
         }
     ]
 
