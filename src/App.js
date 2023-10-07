@@ -25,6 +25,7 @@ import CustomModal from "./components/CustomModal";
 import ExpectedEarnings from "./layouts/ExpectedEarnings";
 import ImagesForm from "./forms/ImagesForm";
 import Notifications from "./pages/Notifications";
+import AddSinglePaymentForm from "./forms/AddSinglePaymentForm"
 import { CloseFullscreen, Fullscreen, Logout, NotificationsActive } from "@mui/icons-material";
 
 function App() {
@@ -32,6 +33,8 @@ function App() {
   const [isAddTenant, setIsAddTenant] = useState(false);
   const [isExpectedEarnings, setIsExpectedEarnings] = useState(false);
   const [isFullScreen,setIsFullScreen] = useState(false);
+  const [isAddPayment,setIsAddPayment] = useState(false);
+
 
 
   const screen = useMediaQuery('(min-width:768px)');
@@ -97,6 +100,8 @@ function App() {
        setIsAddTenant(true)
     }else if(location.search === '?modal=expectedEarnings' && location.pathname === '/'){
       setIsExpectedEarnings(true)
+    }else if(location.search === '?modal=addPayment'){
+      setIsAddPayment(true)
     }
 
   },[location])
@@ -164,7 +169,8 @@ function App() {
         </Content>
       </Layout>
       <MultiPageModal title="Add Tenant" open={isAddTenant} setIsOpen={setIsAddTenant} childred={[<AddTenantDetailsForm/>, <ImagesForm/>,<AddTenantContactInfo/>]}/>
-      <CustomModal width={700} title={"Expected Earnings"} open={isExpectedEarnings} setClose={setIsExpectedEarnings} children={<ExpectedEarnings/>}/>
+      <CustomModal width={900} title={"Expected Earnings"} open={isExpectedEarnings} setClose={setIsExpectedEarnings} children={<ExpectedEarnings/>}/>
+      <CustomModal open={isAddPayment} setClose={setIsAddPayment} title={"Add Payment"} children={<AddSinglePaymentForm />}/>
     </div>
   );
 }

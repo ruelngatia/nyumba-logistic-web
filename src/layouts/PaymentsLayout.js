@@ -2,6 +2,7 @@ import {Table, Button } from "antd";
 import Search from "antd/es/input/Search";
 import React from "react";
 import CustomRangePicker from "../components/CustomRangePicker";
+import { useNavigate } from "react-router-dom";
 
 export default function PaymentsLayout() {
 
@@ -74,6 +75,8 @@ export default function PaymentsLayout() {
     },
   ];
 
+  const navigator = useNavigate()
+
   return (
     <div>
       <div className="flex flex-row justify-between">
@@ -83,7 +86,7 @@ export default function PaymentsLayout() {
           size=""
         />
 
-        <Button className="ml-4">
+        <Button className="ml-4" onClick={()=> navigator("/finances?modal=addPayment")}>
           + Add Payment
         </Button>
   

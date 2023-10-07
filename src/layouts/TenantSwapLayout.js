@@ -1,8 +1,13 @@
 import { Button, Table } from 'antd'
 import Search from 'antd/es/input/Search'
-import React from 'react'
+import React, { useState } from 'react'
+import CustomModal from '../components/CustomModal'
+import TenantSwapForm from '../forms/TenantSwapForm';
 
 export default function TenatSwapLayout() {
+
+   const [isSwap,setIsSwap] = useState(false);
+
     const columns = [
         {
            title: 'No',
@@ -57,8 +62,9 @@ export default function TenatSwapLayout() {
   return (
     <div className='p-1 lg:p-6'>
         <Search placeholder='Search' className='w-4/5 md:w-1/4 float-left mb-4'/>
-        <Button className='float-right ml-2'> Swap </Button>
+        <Button className='float-right ml-2' onClick={() => setIsSwap(true)}> Swap </Button>
         <Table scroll={{x: true}} dataSource={data} columns={columns}/>
+        <CustomModal title={"Swap Room"} children={<TenantSwapForm/>} open={isSwap} setClose={setIsSwap} />
     </div>
   )
 }
